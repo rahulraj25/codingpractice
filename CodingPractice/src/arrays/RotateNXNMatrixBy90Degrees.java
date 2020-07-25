@@ -24,9 +24,8 @@ public class RotateNXNMatrixBy90Degrees {
 		int l=0;
 		
 		for (int i = rowSize-1; i >= 0; i--) {
-			int k=0;
 			for (int j = 0; j < rowSize; j++) {
-				newArray[l][k++] = arr[j][i]; 
+				newArray[l][j] = arr[j][i]; 
 			}
 			l++;
 		}
