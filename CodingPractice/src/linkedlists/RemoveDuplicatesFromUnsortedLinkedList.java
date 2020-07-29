@@ -7,27 +7,27 @@ public class RemoveDuplicatesFromUnsortedLinkedList {
 
 	public static void main(String[] args) {
 
-		Node headNode = intializeLinkedList();
+		LinkedListNode headNode = intializeLinkedList();
 		printLinkedList(headNode);
 		System.out.println();
 		printLinkedList(removeDuplicatesFromLinkedList(headNode));
 		System.out.println();
-		Node headNode2 = intializeLinkedList();
+		LinkedListNode headNode2 = intializeLinkedList();
 		printLinkedList(removeDuplicatesFromLinkedListWithoutHashTable(headNode2));
 
 	}
 
 
-	private static void printLinkedList(Node headNode) {
-		Node node = headNode;
+	private static void printLinkedList(LinkedListNode headNode) {
+		LinkedListNode node = headNode;
 		while(node != null){
 			System.out.print(node.next != null ? node.data + " -> " : node.data);
 			node = node.next;
 		}
 	}
 
-	private static Node removeDuplicatesFromLinkedList(Node headNode) {
-		Node runnerNode = headNode;
+	private static LinkedListNode removeDuplicatesFromLinkedList(LinkedListNode headNode) {
+		LinkedListNode runnerNode = headNode;
 		Set<Integer>  set = new HashSet<Integer>();
 		set.add(runnerNode.data);
 
@@ -47,11 +47,11 @@ public class RemoveDuplicatesFromUnsortedLinkedList {
 		return set.contains(data);
 	}
 
-	private static Node removeDuplicatesFromLinkedListWithoutHashTable(Node headNode) {
-		Node currentNode = headNode;
+	private static LinkedListNode removeDuplicatesFromLinkedListWithoutHashTable(LinkedListNode headNode) {
+		LinkedListNode currentNode = headNode;
 
 		while( currentNode != null){
-			Node runnerNode = currentNode;
+			LinkedListNode runnerNode = currentNode;
 			
 			while(runnerNode.next != null){
 				if(runnerNode.next.data == currentNode.data){
@@ -66,21 +66,21 @@ public class RemoveDuplicatesFromUnsortedLinkedList {
 		return headNode;
 	}
 
-	private static Node intializeLinkedList() {
-		Node node1 = new Node(5,null);
-		Node node2 = new Node(1,null);
+	private static LinkedListNode intializeLinkedList() {
+		LinkedListNode node1 = new LinkedListNode(5,null);
+		LinkedListNode node2 = new LinkedListNode(1,null);
 		node1.next = node2;
-		Node node3 = new Node(2,null);
+		LinkedListNode node3 = new LinkedListNode(2,null);
 		node2.next = node3;
-		Node node4 = new Node(9,null);
+		LinkedListNode node4 = new LinkedListNode(9,null);
 		node3.next = node4;
-		Node node5 = new Node(4,null);
+		LinkedListNode node5 = new LinkedListNode(4,null);
 		node4.next = node5;
-		Node node6 = new Node(5,null);
+		LinkedListNode node6 = new LinkedListNode(5,null);
 		node5.next = node6;
-		Node node7 = new Node(3,null);
+		LinkedListNode node7 = new LinkedListNode(3,null);
 		node6.next = node7;
-		Node node8 = new Node(1,null);
+		LinkedListNode node8 = new LinkedListNode(1,null);
 		node7.next = node8;
 
 		return node1;
