@@ -1,4 +1,4 @@
-package arrays;
+package ctci.arrays;
 
 import java.util.HashMap;
 import java.util.Map;

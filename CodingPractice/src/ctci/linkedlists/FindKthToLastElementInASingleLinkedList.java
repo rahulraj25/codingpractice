@@ -1,4 +1,4 @@
-package linkedlists;
+package ctci.linkedlists;
 
 /**
  * Find kth to last element
@@ -47,7 +47,6 @@ public class FindKthToLastElementInASingleLinkedList {
 		if(index.idx == k){
 			return headNode;
 		}
-
 		return node;
 	}
 	

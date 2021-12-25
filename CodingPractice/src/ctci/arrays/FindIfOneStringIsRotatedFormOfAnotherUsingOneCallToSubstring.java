@@ -1,4 +1,4 @@
-package arrays;
+package ctci.arrays;
 
 /*ERBOTTLEWAT is a rotated form of WATERBOTTLE.
  *return true if one substring is rotated form of Another using only one call to isSubstring method

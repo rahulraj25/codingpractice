@@ -1,4 +1,4 @@
-package arrays;
+package ctci.arrays;
 
 public class FindShortenedVersionOfStringAAABBToA3B2 {
 	

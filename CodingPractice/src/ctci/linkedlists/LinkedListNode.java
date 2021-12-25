@@ -1,4 +1,4 @@
-package linkedlists;
+package ctci.linkedlists;
 
 public class LinkedListNode {
 	
@@ -36,6 +36,14 @@ public class LinkedListNode {
 		return str;
 	}
 	
-	
-	
+	public static LinkedListNode intializeLinkedList(Integer... nums) {
+		LinkedListNode headNode = new LinkedListNode(nums[0],null);
+		LinkedListNode tempNode = headNode;
+		for (int i = 1; i < nums.length; i++) {
+			LinkedListNode node = new LinkedListNode(nums[i],null);
+			tempNode.next = node;
+			tempNode = node;
+		}
+		return headNode;
+	}
 }

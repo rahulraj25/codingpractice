@@ -1,4 +1,4 @@
-package linkedlists;
+package ctci.linkedlists;
 
 /**
  * Delete any middle node except first and last node of a linked list
