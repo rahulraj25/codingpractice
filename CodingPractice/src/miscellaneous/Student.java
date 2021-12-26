@@ -1,9 +1,5 @@
 package miscellaneous;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class Student {
 	
 	int[] queue = new int[10];
