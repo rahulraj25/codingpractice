@@ -1,4 +1,4 @@
-package bnymellon2022;
+package bnymellon;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -13,9 +13,7 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-class Result
-{
-
+class RestAPIResponseParsing {
     /*
      * Complete the 'getTopRatedFoodOutlets' function below.
      *
@@ -26,13 +24,17 @@ class Result
      * 
      * The function accepts only city argument (String).
      */
+    public static void main(String[] args) throws IOException {
+
+        List<String> result = getTopRatedFoodOutlets("houston");
+        System.out.println(result);
+    }
 
     public static List<String> getTopRatedFoodOutlets(String city)
     {
         SortedMap<Float, List<String>> floatStringSortedMap = new TreeMap<>();
         try{
             StringBuffer output = getJsonResponse(city, 1);
-            
             Gson gson  = new Gson();
             
             JsonObject jsonObject = gson.fromJson(output.toString(),JsonObject.class);
@@ -57,9 +59,7 @@ class Result
                         strings.add(outletName.getAsString());
                         floatStringSortedMap.put(userRating.getAsFloat(),strings);
                     }
-
                 }
-            
                 counter++;
             }
         }catch(IOException e){
@@ -90,10 +90,3 @@ class Result
     }
 }
 
-public class Solution {
-    public static void main(String[] args) throws IOException {
-
-        List<String> result = Result.getTopRatedFoodOutlets("houston");
-        System.out.println(result);
-    }
-}
