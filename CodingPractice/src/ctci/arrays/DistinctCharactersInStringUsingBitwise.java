@@ -3,7 +3,7 @@ package ctci.arrays;
 public class DistinctCharactersInStringUsingBitwise {
 	
 	public static void main(String[] args) {
-		System.out.println(isUniqueChars("demo"));
+		System.out.println(isUniqueChars("msci"));
 	}
 	
 	public static boolean isUniqueChars(String str) {

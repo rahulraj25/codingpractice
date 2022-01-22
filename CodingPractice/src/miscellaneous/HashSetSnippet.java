@@ -9,10 +9,10 @@ class HashSetSnippet {
 	}
 	public static void main(String[] args) {
 		HashSet<Object> set = new HashSet<>();
-		HashSetSnippet snippet2 = new HashSetSnippet("demo");
-		HashSetSnippet snippet21 = new HashSetSnippet("demo");
-		String s1 = new String("demo");
-		String s2 = new String("demo");
+		HashSetSnippet snippet2 = new HashSetSnippet("msci");
+		HashSetSnippet snippet21 = new HashSetSnippet("msci");
+		String s1 = new String("msci");
+		String s2 = new String("msci");
 		set.add(snippet2);
 		set.add(snippet21);
 		set.add(s1);
