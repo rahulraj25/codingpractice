@@ -27,7 +27,7 @@ public class FreshPromoExample {
                 while(token.hasMoreTokens()){
 
                     if(token.toString().equals("anything")){
-                        toSearch.add(new String(""));
+                        toSearch.add("");
                     }else{
                         toSearch.add(token.nextToken());
                     }
