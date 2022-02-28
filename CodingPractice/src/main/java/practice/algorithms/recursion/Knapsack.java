@@ -1,4 +1,4 @@
-package practice.algorithms.greedy;
+package practice.algorithms.recursion;
 
 //simple KnapSackProgram Using Recursion Greedy approach
 //Better way to do is using Dynamic Programming where we don't solve already solved subproblems

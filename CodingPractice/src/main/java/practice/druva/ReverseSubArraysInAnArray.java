@@ -2,63 +2,40 @@ package practice.druva;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Stack;
 
 public class ReverseSubArraysInAnArray {
 
-    //[1,2,3,4,5]  2 -> 2 1 4 3 5
-
-//    5 4 3 2 1
-//
-//    //1 2 3 4 5 6 , 3-> 321 654
-//    214365
-//
-//    654321
-//    ->
-//    563412
-//    ->
-//    214365
-//            654 321
-//    // j =2
+    //[1,2,3,4,5]  -> [3, 2, 1, 5, 4]
+	//[1,2,3,4,5,6,7,8] -> [3, 2, 1, 6, 5, 4, 8, 7]
     public static void main(String[] args) {
-
-        int[] arr = new int[]{1,2,3,4,5};
-       // int[] arr = new int[]{1,2,3,4,5,6,7};
-        int[] arr2 = new int[arr.length];
-        int pos = 3;
-        //int pos =3;
-        //check condition
-
-        reverseArrayInSpans(arr, arr2, pos);
-        reverseArrayInSpansUsingStack(arr, arr2, pos);
-
+    // int[] arr = new int[]{1,2,3,4,5};
+       int[] arr = new int[]{1,2,3,4,5,6,7,8};
+       
+       int span = 3;
+       reverseArrayInSpansUsingStack(arr, span);
     }
 
-    private static void reverseArrayInSpansUsingStack(int[] arr, int[] arr2, int span) {
-
-        List<List<Queue>> lists = new ArrayList<>();
-
-        for (int i = 0; i < arr.length; i++) {
-            Stack<Integer> integers = new Stack<>();
-            integers.push(arr[i]);
-        }
+    private static void reverseArrayInSpansUsingStack(int[] arr, int span) {
+    	int begin = 0;
+    	int end =  begin + span - 1; 
+    	List<Integer> nums = new ArrayList<>();
+    	Stack<Integer> stack = new Stack<>();
+    	
+    	while(begin < arr.length && end < arr.length){
+    		
+    		for(int i=begin ; i<=end ; i++){
+    			stack.push(arr[i]);
+    		}
+    		
+    		while(!stack.isEmpty())
+    			nums.add(stack.pop());
+    		
+    		begin = end + 1 ;
+    		end = (begin + span - 1) <= arr.length -1 ? (begin + span -1) : arr.length - 1;   
+    	}
+    	
+    	System.out.println(nums);
     }
 
-    private static void reverseArrayInSpans(int[] arr, int[] arr2, int pos) {
-        int k =0;
-        for (int i = 0; i < arr.length- pos; i = i+ pos) {
-            for (int j = i+ pos -1; j >= i; j--) {
-                arr2[k++] = arr[j];
-            }
-        }
-
-        int temp = k;
-        //reverse the last chunk
-
-        for (int i = 0; i < arr2.length; i++) {
-            System.out.println(arr2[i]);
-        }
-    }
 }
-
