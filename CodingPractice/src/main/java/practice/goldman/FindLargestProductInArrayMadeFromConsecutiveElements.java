@@ -3,6 +3,7 @@ package practice.goldman;
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO solve with DP
 public class FindLargestProductInArrayMadeFromConsecutiveElements {
     public static void main(String[] args) {
 
