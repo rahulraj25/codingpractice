@@ -45,7 +45,7 @@ public class ReverseSubArraysInAnArray {
 
 	   //assuming behavior like: In the last pass, elements are not reversed if K is greater than length of array.
 	   //solution is O(n) and no extra space.
-        if (k == 0 || k == 1) return arr;
+        if (k == 0 || k == 1) return;
 
         if (k > arr.length) k = arr.length;
 
