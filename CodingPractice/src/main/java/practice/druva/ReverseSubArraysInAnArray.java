@@ -3,6 +3,7 @@ package practice.druva;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.Arrays;
 
 public class ReverseSubArraysInAnArray {
 
@@ -14,6 +15,7 @@ public class ReverseSubArraysInAnArray {
        
        int span = 3;
        reverseArrayInSpansUsingStack(arr, span);
+       //reverseArrayInGroupsOfK(arr, int k);
     }
 
     private static void reverseArrayInSpansUsingStack(int[] arr, int span) {
@@ -36,6 +38,38 @@ public class ReverseSubArraysInAnArray {
     	}
     	
     	System.out.println(nums);
+    }
+	
+	
+   public void reverseArrayInGroupsOfK(int[] arr, int k) {
+
+	   //assuming behavior like: In the last pass, elements are not reversed if K is greater than length of array.
+	   //solution is O(n) and no extra space.
+        if (k == 0 || k == 1) return;
+
+        if (k > arr.length) k = arr.length;
+
+        int start = 0, end = k;
+        boolean last = false;
+
+        while (!last) {
+            if (end > arr.length) {
+                end = arr.length - k;
+                last = true;
+            }
+
+            for (int i = start, j = end - 1; i < j; i++, j--) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            if (!last) {
+                start += k;
+                end += k;
+            }
+        }
+
+        System.out.println(Arrays.toString(arr));
     }
 
 }
